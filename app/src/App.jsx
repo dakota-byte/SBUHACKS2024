@@ -5,12 +5,21 @@ import About from './About';
 import Drawing from './Drawing';
 import Feed from './Feed';
 import Profile from './Profile';
+import background from './assets/background.png';
 
 import KyleTest from './test.jsx'
 const App = () => {
+  const backgroundStyles = {
+    backgroundImage: `url(${background})`, // Use the imported image in the background URL
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100vh',
+  };
+
   return (
     <Router>
-      <div>
+      <div style={backgroundStyles} >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
