@@ -32,9 +32,12 @@ app.get('/KyleTest', (req, res) => {
   res.send('This is the kyle test page.');
 });
 
+// discord shenanigans
+router.get('/login', (req, res) => {
+  res.redirect(`https://discord.com/api/oauth2/authorize?client_id=1205963282226085968&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdiscord%2Fcallback&scope=identify`);
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-
-app.use('/api/discord', require('../api/discord'));
