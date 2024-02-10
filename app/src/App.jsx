@@ -14,8 +14,8 @@ const App = () => {
     backgroundImage: `url(${background})`, // Use the imported image in the background URL
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '100vh',
+    backgroundRepeat: 'repeat-y',
+    height: '250vh',
   };
 
   return (
