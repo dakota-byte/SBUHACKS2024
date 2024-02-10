@@ -6,7 +6,7 @@ import {Box} from "@chakra-ui/react";
 
 const PostImage = () => {
     return (
-      <Box bg="gray.200" height="200px" my={4} borderRadius="md">
+      <Box bg="gray.200" height="500px" width = "500px" my={4} borderRadius="md">
         {/* Placeholder content for post image */}
       </Box>
     );

@@ -16,7 +16,8 @@ const KyleTest = () => {
 
   const placeHolderLink1 = "https://bit.ly/sage-adebayo"
 
-  const placeHolderCaption = "title/caption/description/funny message/lolol"
+  const placeHolderCaption1 = "title/caption/description/funny message/lolol"
+  const placeHolderCaption2 = "title/caption/description/funny message/lolol"
   return (
     // <div>
     //   <ProfileBox name = {placeHolderName1} link = {placeHolderLink1}></ProfileBox>
@@ -29,16 +30,16 @@ const KyleTest = () => {
     //   <ProfileBox name = {placeHolderName2} link = {'https://bit.ly/broken-link'}></ProfileBox>
     //   <ProfileBox name = {placeHolderName3} link = {'https://bit.ly/broken-link'}></ProfileBox>
 
-        <PostHeader name = {placeHolderName1} link = {placeHolderLink1} caption = {placeHolderCaption}>
+        <PostHeader name = {placeHolderName1} link = {placeHolderLink1} caption = {placeHolderCaption1}>
 
         </PostHeader>
 
         <Post
             name = {placeHolderName1}
             link = {placeHolderLink1}
-            caption = {placeHolderCaption}
+            caption = {placeHolderCaption1}
         >
-
+            
         </Post>
 
     </div>
