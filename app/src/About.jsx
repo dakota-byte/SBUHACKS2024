@@ -8,7 +8,6 @@ const About = () => {
     <div>
       <Navigation/>
       <h1>About Page</h1>
-      <a href="/api/discord/login">Login through discord</a>
     </div>
   );
 };
