@@ -1,6 +1,10 @@
+require('dotenv').config();
 const express = require('express');
+const axios = require('axios');
+const url = require('url');
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Route 1: Home route
 app.get('/home', (req, res) => {
@@ -33,8 +37,42 @@ app.get('/KyleTest', (req, res) => {
 });
 
 // discord shenanigans
-router.get('/login', (req, res) => {
-  res.redirect(`https://discord.com/api/oauth2/authorize?client_id=1205963282226085968&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fdiscord%2Fcallback&scope=identify`);
+app.get('/login', (req, res) => {
+  res.send('logging in...')
+});
+
+app.get('/api/discord/redirect', async (req, res) => {
+  const { code } = req.query;
+
+  if (code) {
+    const formData = new url.URLSearchParams({
+      client_id: process.env.CLIENT_ID,
+      client_secret: process.env.CLIENT_SECRET,
+      grant_type: 'authorization_code',
+      code: code.toString,
+      redirect_uri: 'http://localhost:3000/api/discord/redirect',
+    });
+
+    const ouput = await axios.post('https://discord.com/api/v10/oauth2/token', 
+      formData, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
+
+    if (output.data) {
+      const access = output.data.access_token;
+
+      const userinfo = await axios.get('https://discord.com/api/v10/users/@me', {
+        headers: {
+          authorization: `Bearer ${access}`,
+        },
+      });
+
+      console.log(output.data, userinfo.data)
+    }
+  }
 });
 
 // Start the server
