@@ -11,6 +11,8 @@ import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 import './animation.css';
 
+import logo from './assets/logo.png';
+
 const Home = () => {
   <style>
   {`
@@ -27,6 +29,7 @@ const Home = () => {
 
   return (
     <div className="animated-background">
+      <img src={logo}/>
       <Navigation/>
       <Stack direction='row' spacing={4}> </Stack>
 
