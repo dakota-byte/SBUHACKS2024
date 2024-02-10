@@ -6,6 +6,7 @@ import Drawing from './Drawing';
 import Feed from './Feed';
 import Profile from './Profile';
 
+import KyleTest from './test.jsx'
 const App = () => {
   return (
     <Router>
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/drawing" element={<Drawing />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/KyleTest" element={<KyleTest />} />
         </Routes>
       </div>
     </Router>
