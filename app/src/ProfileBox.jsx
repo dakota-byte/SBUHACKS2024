@@ -22,8 +22,20 @@ function ProfileBox(props)
             > 
                 <Avatar name = {props.name} src={props.link} size ="md" mr = {4} />
             
+                <Box flex = "1">
+                    <Text 
+                        noOfLines= {1} 
+                        fontWeight = "bold" 
+                        fontSize="sm"
+                        overflow="hidden"
+                        textOverflow="ellipsis"
+                    >
+                        {props.name}
+                    </Text>
+                </Box>
 
-                <Text noOfLines= {1} fontWeight = "bold" fontSize="sm">{props.name}</Text>
+                <Box p = {1}> {/*adding on the right of the text*/}</Box>
+                
                 
             </Box>
             
