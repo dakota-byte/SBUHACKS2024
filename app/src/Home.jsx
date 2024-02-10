@@ -5,10 +5,12 @@ import { Kbd } from '@chakra-ui/react'
 import { Card, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, CardBody, CardFooter } from '@chakra-ui/react'
 
 import { Avatar, AvatarBadge } from '@chakra-ui/react'
+import Navigation from "./Navigation.jsx"
 
 const Home = () => {
   return (
     <div>
+      <Navigation/>
       <Stack direction='row' spacing={4}>
   <Avatar>
     <AvatarBadge boxSize='1.25em' bg='green.500' />

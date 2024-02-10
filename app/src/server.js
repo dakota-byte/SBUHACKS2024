@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 // Route 1: Home route
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('Welcome to the homepage!');
 });
 
