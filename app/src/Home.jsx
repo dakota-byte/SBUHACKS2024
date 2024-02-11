@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div className="animated-background">
-      <img src={logo}/>
+      <img src={logo} alt="logo"/>
       <Navigation/>
       <Stack direction='row' spacing={4}> </Stack>
 
