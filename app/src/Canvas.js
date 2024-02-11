@@ -55,6 +55,8 @@ const Canvas = () => {
     const dataURL = canvas.toDataURL("image/png");
   
     const base64Data = dataURL.split(',')[1];
+
+    const encodedImageName = encodeURIComponent(base64Data);
   
     try {
       const response = await fetch("http://localhost:5000/api/save-image", {
@@ -62,7 +64,7 @@ const Canvas = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ imageData: base64Data })
+        body: JSON.stringify({ imageData: encodedImageName })
       });
   
       if (!response.ok) {
