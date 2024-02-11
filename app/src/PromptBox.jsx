@@ -35,7 +35,7 @@ function PromptBox(props)
                 p = {2}
                 boxShadow = "md"
                 borderRadius = "md"
-                maxWidth="1000px" // Limit width to 400px
+                maxWidth="700px" // Limit width to 400px
                 mx = "auto"
                 marginTop={0}
                 marginBottom={2}
@@ -49,7 +49,7 @@ function PromptBox(props)
                         textOverflow="ellipsis"
                         textAlign="center"
                     >
-                        PROMPT:
+                        TODAY'S PROMPT:
                     </Text>
                     
                     <Text  
