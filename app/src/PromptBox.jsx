@@ -1,10 +1,12 @@
 import React from "react";
 
-import { Text , Tab, Tabs, TabList, TabPanels, TabPanel, IconButton, Box, Textarea, Flex } from '@chakra-ui/react'
+import { Button, Image, Text , Tab, Tabs, TabList, TabPanels, TabPanel, IconButton, Box, Textarea, Flex } from '@chakra-ui/react'
 
 import ProfileBox from "./ProfileBox.jsx"
 
 import PostHeader from "./PostHeader.jsx";
+
+import {useNavigate} from "react-router-dom";
 
 import Post from "./Post.jsx"
 
@@ -14,6 +16,7 @@ import blueAstronaut from './assets/astronautpfps/blueastronaut.png';
 import greenAstronaut from './assets/astronautpfps/greenastronaut.png';
 import redAstronaut from './assets/astronautpfps/redastronaut.png';
 import yellowAstronaut from './assets/astronautpfps/yellowastronaut.png';
+
 
 function PromptBox(props)
 {
@@ -26,6 +29,12 @@ function PromptBox(props)
   
     const placeHolderCaption1 = "title/caption/description/funny message/lolol"
     const placeHolderCaption2 = "title/caption/description/funny message/lolol"
+    
+    const navigate = useNavigate();
+
+    const navigateToRoute = () => {
+      navigate('/')
+    }
 
     return(
         <div> 
@@ -49,7 +58,7 @@ function PromptBox(props)
                         textOverflow="ellipsis"
                         textAlign="center"
                     >
-                        PROMPT:
+                        TODAY'S PROMPT:
                     </Text>
                     
                     <Text  
@@ -61,7 +70,7 @@ function PromptBox(props)
                     >
                         {props.prompt}
                     </Text>
-                    <Tabs defaultIndex={0} isFitted variant = 'enclosed' align = 'center' size = 'lg' colorScheme = 'cyan' fontFamily='monospace' style={{marginTop:'5px'}}>
+                    <Tabs boxShadow='md' defaultIndex={0} isFitted variant = 'soft-rounded' align = 'center' size = 'lg' colorScheme = 'cyan' fontFamily='monospace' style={{marginTop:'10px'}}>
                         <TabList>
                             <Tab _selected={{ color: 'white', bg: 'blue.500' }}>DRAW</Tab>
                             <Tab _selected={{ color: 'white', bg: 'blue.500' }}>VIEW</Tab>
@@ -78,7 +87,7 @@ function PromptBox(props)
                                         style={{ borderRadius: '50%' , marginRight: '8px'}}
                                     />
 
-                                <IconButton
+                                    <IconButton
                                         colorScheme='green'
                                         aria-label='Call Segun'
                                         size='md'
@@ -99,8 +108,15 @@ function PromptBox(props)
                                         style={{ borderRadius: '50%' , marginRight: '8px'}}
                                     />
 
-                                    </Flex>
-                                    <Textarea maxLength={20} rows={1} size='lg' placeholder='Enter a desired username (20 characters max)...' style={{width: '550px', resize: 'none', paddingTop: '5px', marginTop: '10px'}}/>
+                                </Flex>
+
+                                <Textarea maxLength={20} rows={1} size='lg' placeholder='Enter a desired username (20 characters max)...' style={{width: '550px', resize: 'none', paddingTop: '5px', marginTop: '10px'}}/>
+                                
+                                <DrawBox></DrawBox>
+
+                                <Flex justifyContent="center" alignItems="center" height="15vh">
+                                    <Button colorScheme='green' onClick={navigateToRoute} size="md" h = "50px" w="210px" top="30px">SUBMIT</Button>
+                                </Flex>
                             </TabPanel>
 
                         <TabPanel>
@@ -119,14 +135,6 @@ function PromptBox(props)
                             >
                             
                             </Post>
-
-                            <ProfileBox name = {placeHolderName1} link = {placeHolderLink1}></ProfileBox>
-                    //      <ProfileBox name = {placeHolderName2} link = {'https://bit.ly/broken-link'}></ProfileBox>
-                    //      <ProfileBox name = {placeHolderName3} link = {placeHolderLink2}></ProfileBox>
-
-                            <PostHeader name = {placeHolderName1} link = {placeHolderLink1} caption = {placeHolderCaption1}>
-
-                            </PostHeader>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>
