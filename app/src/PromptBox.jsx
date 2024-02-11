@@ -1,12 +1,30 @@
 import React from "react";
 
-import { Text , Tab, Tabs, TabList } from '@chakra-ui/react'
+import { Text , Tab, Tabs, TabList, TabPanels, TabPanel } from '@chakra-ui/react'
+
+import ProfileBox from "./ProfileBox.jsx"
+
+import PostHeader from "./PostHeader.jsx";
+
+import Post from "./Post.jsx"
+
+import DrawBox from "./DrawBox.jsx";
 
 
 import {Box} from "@chakra-ui/react";
 
 function PromptBox(props)
 {
+    const placeHolderName1 = "John Doe";
+    const placeHolderName2 = "Kyle Robert Batman Bautista";
+    const placeHolderName3 = "Kyle";
+  
+    const placeHolderLink1 = "https://bit.ly/sage-adebayo"
+    const placeHolderLink2 = "https://avatarfiles.alphacoders.com/340/340351.jpg"
+  
+    const placeHolderCaption1 = "title/caption/description/funny message/lolol"
+    const placeHolderCaption2 = "title/caption/description/funny message/lolol"
+
     return(
         <div> 
             <Box 
@@ -46,6 +64,37 @@ function PromptBox(props)
                             <Tab _selected={{ color: 'white', bg: 'blue.500' }}>DRAW</Tab>
                             <Tab _selected={{ color: 'white', bg: 'blue.500' }}>VIEW</Tab>
                         </TabList>
+
+                        <TabPanels>
+                            <TabPanel>
+                                <p>one!</p>
+                            </TabPanel>
+                            <TabPanel>
+                            <Post
+            name = {placeHolderName1}
+            link = {placeHolderLink1}
+            caption = {placeHolderCaption1}
+        >
+            
+        </Post>
+        
+        <Post
+            name = {placeHolderName2}
+            link = {placeHolderLink2}
+            caption = {placeHolderCaption2}
+        >
+            
+        </Post>
+
+        <ProfileBox name = {placeHolderName1} link = {placeHolderLink1}></ProfileBox>
+    //   <ProfileBox name = {placeHolderName2} link = {'https://bit.ly/broken-link'}></ProfileBox>
+    //   <ProfileBox name = {placeHolderName3} link = {placeHolderLink2}></ProfileBox>
+
+        <PostHeader name = {placeHolderName1} link = {placeHolderLink1} caption = {placeHolderCaption1}>
+
+        </PostHeader>
+                            </TabPanel>
+                        </TabPanels>
                     </Tabs>
                 </Box>
 
