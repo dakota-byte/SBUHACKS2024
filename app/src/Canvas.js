@@ -48,35 +48,24 @@ const Canvas = () => {
     };
   }, [isDrawing]);
 
-  const handleSaveImage = () => {
+  const handleSaveImageToServer = () => {
     const canvas = canvasRef.current;
     const dataURL = canvas.toDataURL("image/png");
-  
-    // Prompt the user to enter a file name with the folder name
-    const fileNameWithFolder = prompt("Enter file name with folder (e.g., doodle/image.png):");
-    if (!fileNameWithFolder) return; // If user cancels or doesn't enter anything
-  
-    // Create an anchor element
-    const downloadLink = document.createElement("a");
-    downloadLink.href = dataURL;
-  
-    // Set the download attribute to the specified file name
-    downloadLink.download = fileNameWithFolder;
-  
-    // Append the anchor element to the body
-    document.body.appendChild(downloadLink);
-  
-    // Trigger a click event on the anchor element
-    downloadLink.click();
-  
-    // Remove the anchor element from the body
-    document.body.removeChild(downloadLink);
+
+    // Send the image data to the server
+    axios.post("/api/save-image", { imageData: dataURL })
+      .then(response => {
+        console.log("Image saved to server:", response.data);
+      })
+      .catch(error => {
+        console.error("Error saving image to server:", error);
+      });
   };
 
   return (
     <div>
       <canvas ref={canvasRef} width={570} height={300} />
-      <button onClick={handleSaveImage}>Save as PNG</button>
+      <button onClick={handleSaveImageToServer}>Save as PNG</button>
       {imageData && (
         <div>
           <h2>Saved Image:</h2>
