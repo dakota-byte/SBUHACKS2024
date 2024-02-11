@@ -19,6 +19,7 @@ function PromptBox(props)
                 mx = "auto"
                 marginTop={2}
                 marginBottom={2}
+                bg="white"
             > 
                 <Box flex = "1">
                     <Text  

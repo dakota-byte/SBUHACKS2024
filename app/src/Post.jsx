@@ -7,7 +7,7 @@ import {Box} from "@chakra-ui/react";
 
 const Post = (prop) => {
     return (
-        <Box p={4} boxShadow="md" borderRadius="md" maxWidth="600px" mx="auto" marginTop={2} marginBottom={2}>
+        <Box p={4} boxShadow="md" borderRadius="md" maxWidth="600px" mx="auto" marginTop={2} marginBottom={2} bg="white">
           {/* Post Header */}
           <PostHeader name={prop.name} link={prop.link} caption={prop.caption} />
     
