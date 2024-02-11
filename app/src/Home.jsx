@@ -8,6 +8,8 @@ import { defineStyle } from '@chakra-ui/react'
 
 import './animation.css';
 
+import {Center, Image} from '@chakra-ui/react'
+
 import logo from './assets/logo.png';
 
 const Home = () => {
@@ -19,25 +21,31 @@ const Home = () => {
 
   const headingStyles = defineStyle({
     textAlign: 'center', // Center the text
-    marginTop: '3em', // Indent the text by 5 lines
+    marginTop: '-1em', // Indent the text by 5 lines
     color: '#90e0ef',
     fontFamily: 'Bubblegum Sans, sans-serif', // Change the font to Arial
   });
 
   return (
     <div className="animated-background">
-      <img src={logo} alt="logo"/>
       <Navigation/>
+      <Center>
+        <Image
+          borderRadius='full'
+          boxSize='400px'
+          src= {logo}
+          alt='Logo'
+
+        />
+      </Center>
       <Stack direction='row' spacing={4}> </Stack>
 
       <Stack spacing={1} align = "center">
-        <Heading as='h1' size='3xl' noOfLines={20} style={headingStyles}>
+        <Heading as='h1' size='2xl' noOfLines={20} style={headingStyles}>
           DoodleDash
         </Heading>
       </Stack>
     </div>
-
-    
   );
 };
 
