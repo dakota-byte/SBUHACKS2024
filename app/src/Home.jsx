@@ -3,7 +3,7 @@ import React from 'react';
 
 import Navigation from "./Navigation.jsx"
 
-import {useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import './animation.css';
 
@@ -24,7 +24,7 @@ const Home = () => {
       <Center>
         <Image
           borderRadius='full'
-          boxSize='520px'
+          boxSize='530px'
           src= {logo}
           alt='Logo'
 
