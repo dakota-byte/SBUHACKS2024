@@ -1,17 +1,15 @@
-require('dotenv').config();
 const express = require('express');
 
+const port = 3000;
+
 const app = express();
-const port = process.env.PORT || 3000;
+app.use(express.json());
 
-// In your route file:
-const db = require('./mongo');
-
-app.get('/users', async (req, res) => {
-  const collection = await db.connect().collection('users');
-  const users = await collection.find().toArray();
-  res.send(users);
+app.get('/users', (req, res) => {
+  res.json({"please":"work"});
 });
+
+app.use(express.static('public'));
 
 // BELOW IS BELOW IS BELOW XD
 
