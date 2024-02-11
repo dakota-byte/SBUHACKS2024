@@ -1,5 +1,5 @@
-import {Stack} from '@chakra-ui/react'
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+
+import { Tabs, TabList, Tab } from '@chakra-ui/react'
 
 
 function Navigation(){

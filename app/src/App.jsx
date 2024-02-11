@@ -29,6 +29,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/KyleTest" element={<KyleTest />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/api/discord/redirect" element={<Login />} />
         </Routes>
       </div>
     </Router>

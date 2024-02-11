@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
+import { Avatar } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 
 

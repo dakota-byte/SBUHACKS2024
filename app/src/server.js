@@ -33,12 +33,18 @@ app.get('/profile', (req, res) => {
 
 //test space for kyle
 app.get('/KyleTest', (req, res) => {
+  console.log("heyheyhey");
   res.send('This is the kyle test page.');
 });
 
 // discord shenanigans
 app.get('/login', (req, res) => {
   res.send('logging in...')
+  console.log("logging in...")
+});
+
+app.get('wtfwtf', (req, res) => {
+  res.send('<p>wtfwtf</p>')
 });
 
 app.get('/api/discord/redirect', async (req, res) => {
@@ -46,14 +52,14 @@ app.get('/api/discord/redirect', async (req, res) => {
 
   if (code) {
     const formData = new url.URLSearchParams({
-      client_id: process.env.CLIENT_ID,
-      client_secret: process.env.CLIENT_SECRET,
+      client_id: process.env.ClientID,
+      client_secret: process.env.ClientSecret,
       grant_type: 'authorization_code',
       code: code.toString,
       redirect_uri: 'http://localhost:3000/api/discord/redirect',
     });
 
-    const ouput = await axios.post('https://discord.com/api/v10/oauth2/token', 
+    const output = await axios.post('https://discord.com/api/oauth2/token', 
       formData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -64,15 +70,16 @@ app.get('/api/discord/redirect', async (req, res) => {
     if (output.data) {
       const access = output.data.access_token;
 
-      const userinfo = await axios.get('https://discord.com/api/v10/users/@me', {
+      const userinfo = await axios.get('https://discord.com/api/users/@me', {
         headers: {
-          authorization: `Bearer ${access}`,
+          authorization: `Bearer ${output.data.access_token}`,
         },
       });
 
       console.log(output.data, userinfo.data)
     }
   }
+  res.send('<p>heyhey</p>');
 });
 
 // Start the server

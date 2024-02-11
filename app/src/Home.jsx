@@ -1,13 +1,10 @@
 // Home.js
 import React from 'react';
+import { Stack, Heading} from '@chakra-ui/react'
 
-import { Center, Kbd } from '@chakra-ui/react'
-import { Card, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, CardBody, CardFooter } from '@chakra-ui/react'
-
-import { Avatar, AvatarBadge } from '@chakra-ui/react'
 import Navigation from "./Navigation.jsx"
 
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle } from '@chakra-ui/react'
 
 import './animation.css';
 
