@@ -19,7 +19,12 @@ const DrawBox = () => {
                     
                 </Box>
             </Flex>
-            <Box boxShadow ="lg">
+            <Box 
+                boxShadow ="lg"
+                border="1px"
+                borderRadius="md"
+                borderColor="blue.300"    
+            >
                 <Canvas
                     width = "570px"
                     height = "300px"
