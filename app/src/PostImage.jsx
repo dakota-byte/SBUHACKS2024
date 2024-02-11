@@ -8,7 +8,7 @@ import placeHolderImg from "./assets/whitebox.png"
 import placeHolderDrawing from "./assets/lilGuy.png"
 
 
-const PostImage = () => {
+const PostImage = (prop) => {
   return (
     <Box
       bg="gray.200"
@@ -20,7 +20,7 @@ const PostImage = () => {
       boxShadow="sm"
     >
       <img
-        src={placeHolderDrawing}
+        src={prop.src}
         alt="Post Image"
         style={{
           width: "100%",

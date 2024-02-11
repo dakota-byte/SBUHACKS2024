@@ -83,7 +83,7 @@ const Canvas = () => {
   return (
     <div>
       <canvas ref={canvasRef} width={570} height={300} />
-      <button onClick={handleSaveImageToServer}>Submit</button>
+      <button style={{backgroundColor: 'green', color: 'white', width: '15%', borderRadius: '10px', height: '20%'}} onClick={handleSaveImageToServer}>Submit</button>
       {imageData && (
         <div>
           <h2>Saved Image:</h2>

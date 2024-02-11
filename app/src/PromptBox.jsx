@@ -115,31 +115,7 @@ function PromptBox(props)
 
                                     <DrawBox></DrawBox>
                                   
-                                    <Stack direction={{ base: 'column', md: 'row' }} spacing={4} align="center">
-                                        <Box margin="1px">
-                                            <Button
-                                                colorScheme="green"
-                                                onClick={navigateToRoute}
-                                                maxWidth="210"
-                                                maxHeight="50px"
-                                                width="100%"
-                                            >
-                                                SUBMIT
-                                            </Button>
-                                    </Box>
                                     
-                                        <Box margin="1px">
-                                            <Button
-                                                colorScheme="red"
-                                                onClick={navigateToRoute}
-                                                maxWidth="150"
-                                                maxHeight="30px"
-                                                width="100%"
-                                            >
-                                                CANCEL
-                                            </Button>
-                                        </Box>
-                                    </Stack>
 
                                     
                                 </Box>
@@ -158,13 +134,7 @@ function PromptBox(props)
                             </TabPanel>
 
                         <TabPanel>
-                            <Post
-                                name = {placeHolderName1}
-                                link = {placeHolderLink1}
-                                caption = {placeHolderCaption1}
-                            >
-                            
-                            </Post>
+            \
                         
                             <Post
                             name = {placeHolderName2}

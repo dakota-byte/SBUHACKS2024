@@ -13,7 +13,7 @@ const App = () => {
   const backgroundStyles = {
     backgroundImage: `url(${background})`, // Use the imported image in the background URL
     backgroundRepeat: 'repeat',
-    height: '150vh'
+    height: '450vh'
   };
 
   return (

@@ -1,23 +1,32 @@
-//this will be for the post component
-import PostHeader from "./PostHeader"
-import PostImage from "./PostImage"
-import PostComments from "./PostComments"
+import React from 'react';
+import { Box } from '@chakra-ui/react';
+import PostHeader from './PostHeader';
+import PostImage from './PostImage';
 
-import {Box} from "@chakra-ui/react";
+// Create a context for all images in the './images' folder
+const imagesContext = require.context('../images', false, /\.(jpg|jpeg|png|gif)$/);
 
-const Post = (prop) => {
-    return (
-        <Box p={4} boxShadow="md" borderRadius="md" maxWidth="600px" mx="auto" marginTop={2} marginBottom={2} bg="white">
+const images = imagesContext.keys().map((key) => ({
+  name: key.split('/').pop().split('.')[0],
+  link: imagesContext(key).default, // Get the image link using require.context
+  caption: `Caption for ${key.split('/').pop().split('.')[0]}`, // You can modify this caption as needed
+}));
+
+const Post = () => {
+  return (
+    <div>
+      {images.map((image, index) => (
+        <Box key={index} p={4} boxShadow="md" borderRadius="md" maxWidth="600px" mx="auto" marginTop={2} marginBottom={2} bg="white">
           {/* Post Header */}
-          <PostHeader name={prop.name} link={prop.link} caption={prop.caption} />
+          <PostHeader name={image.name} link={image.link} caption={image.caption} />
     
           {/* Post Image Placeholder */}
-          <PostImage/>
+          <PostImage src={image.link} />
     
-          {/* Post Comments Placeholder */}
-          <PostComments/>
         </Box>
-      );
-  };
-  
-  export default Post;
+      ))}
+    </div>
+  );
+};
+
+export default Post;
