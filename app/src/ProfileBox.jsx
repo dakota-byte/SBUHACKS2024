@@ -5,6 +5,7 @@ import { Text } from '@chakra-ui/react'
 
 
 import {Box} from "@chakra-ui/react";
+import astronaut from "./assets/astronautpfps/blueastronaut.png"
 
 function ProfileBox(props)
 {
@@ -20,7 +21,7 @@ function ProfileBox(props)
                 maxWidth="250px" // Limit width to 400px
                 mx = "auto"
             > 
-                <Avatar name = {props.name} src={props.link} size ="md" mr = {4} />
+                <Avatar name = {props.name} src={astronaut} size ="md" mr = {4} />
             
                 <Box flex = "1">
                     <Text 
