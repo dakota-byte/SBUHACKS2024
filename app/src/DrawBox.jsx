@@ -30,14 +30,14 @@ const DrawBox = () => {
                     height = "300px"
                 >
                 </Canvas>
-                <IconButton
+                {/* <IconButton
                     variant='outline'
                     colorScheme='pink'
                     aria-label='Call Sage'
                     fontSize='20px'
                     icon={<CiEraser />}
                     style={{ borderRadius: '50%' , right: '-255px', top: '-10px'}}
-                />
+                /> */}
             </Box>
             
 
