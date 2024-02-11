@@ -1,15 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 
 const port = 3000;
 
 const app = express();
-app.use(express.json());
-
-app.get('/users', (req, res) => {
-  res.json({"please":"work"});
-});
-
-app.use(express.static('public'));
+app.use(cors());
 
 // BELOW IS BELOW IS BELOW XD
 
