@@ -44,7 +44,7 @@ function PromptBox(props)
                 p = {2}
                 boxShadow = "md"
                 borderRadius = "md"
-                maxWidth="1000px" // Limit width to 400px
+                maxWidth="700px" // Limit width to 400px
                 mx = "auto"
                 marginTop={0}
                 marginBottom={2}
@@ -116,6 +116,10 @@ function PromptBox(props)
 
                                 <Flex justifyContent="center" alignItems="center" height="15vh">
                                     <Button colorScheme='green' onClick={navigateToRoute} size="md" h = "50px" w="210px" top="30px">SUBMIT</Button>
+                                </Flex>
+
+                                <Flex justifyContent="center" alignItems="center" height="12vh">
+                                    <Button colorScheme='red' onClick={navigateToRoute} size="md" h = "30px" w="150px" top="-30px">CANCEL</Button>
                                 </Flex>
                             </TabPanel>
 
