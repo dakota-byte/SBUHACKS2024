@@ -12,20 +12,9 @@ import {Center, Image} from '@chakra-ui/react'
 
 import logo from './assets/logo.png';
 
+import { Button, ButtonGroup, Flex } from '@chakra-ui/react'
+
 const Home = () => {
-  <style>
-  {`
-    @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-  `} </style>
-  
-
-  const headingStyles = defineStyle({
-    textAlign: 'center', // Center the text
-    marginTop: '0em', // Indent the text by 5 lines
-    color: '#90e0ef',
-    fontFamily: 'Bubblegum Sans, sans-serif', // Change the font to Arial
-  });
-
   return (
     <div className="animated-background">
       <Navigation/>
@@ -39,6 +28,10 @@ const Home = () => {
         />
       </Center>
       <Stack direction='row' spacing={4}> </Stack>
+
+      <Flex justifyContent="center" alignItems="center" height="0vh">
+        <Button colorScheme='blue' size="lg" h = "55px" w="210px" top="-100px">Play</Button>
+      </Flex>
     </div>
   );
 };
