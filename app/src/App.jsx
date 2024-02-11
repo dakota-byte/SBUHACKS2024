@@ -12,9 +12,8 @@ import KyleTest from './test.jsx'
 const App = () => {
   const backgroundStyles = {
     backgroundImage: `url(${background})`, // Use the imported image in the background URL
-    backgroundPosition: 'center',
     backgroundRepeat: 'repeat',
-    height: '950px'
+    height: '150vh'
   };
 
   return (
