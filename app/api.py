@@ -72,7 +72,7 @@ def upload():
     image_data = urllib.parse.unquote(image_data)
     image_data = base64.b64decode(image_data)
 
-    with open(f'./images/{data["id"]}.png', 'wb') as f:
+    with open(f'./src/images/{data["id"]}.png', 'wb') as f:
         f.write(image_data)
 
     # Insert the data into MongoDB
