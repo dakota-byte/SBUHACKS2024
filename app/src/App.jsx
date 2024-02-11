@@ -12,10 +12,9 @@ import KyleTest from './test.jsx'
 const App = () => {
   const backgroundStyles = {
     backgroundImage: `url(${background})`, // Use the imported image in the background URL
-    backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundRepeat: 'repeat-y',
-    height: '250vh',
+    backgroundRepeat: 'repeat',
+    height: '2500px'
   };
 
   return (
@@ -29,6 +28,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/KyleTest" element={<KyleTest />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/api/discord/redirect" element={<Login />} />
         </Routes>
       </div>
     </Router>
