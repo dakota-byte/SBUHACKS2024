@@ -1,0 +1,13 @@
+.image-container {
+    position: relative; /* Container needs position relative for absolute positioning */
+    width: 50px; /* Set the width of the container */
+    height: 50px; /* Set the height of the container */
+  }
+  
+  .custom-image {
+    position: absolute; /* Set image position to absolute */
+    top: 100%; /* Move the image to the center vertically */
+    left: 100%; /* Move the image to the center horizontally */
+    transform: translate(-100%, -100%); /* Center the image within its container */
+  }
+  
