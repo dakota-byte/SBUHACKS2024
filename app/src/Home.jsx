@@ -4,6 +4,10 @@ import { Stack, Heading} from '@chakra-ui/react'
 
 import Navigation from "./Navigation.jsx"
 
+import { useHistory, useNavigate } from "react-router-dom";
+
+import { withRouter } from 'react-router';
+
 import { defineStyle } from '@chakra-ui/react'
 
 import './animation.css';
@@ -12,19 +16,14 @@ import {Center, Image} from '@chakra-ui/react'
 
 import logo from './assets/logo.png';
 
-const Home = () => {
-  <style>
-  {`
-    @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-  `} </style>
-  
+import { Button, ButtonGroup, Flex, Switch, Route, Link } from '@chakra-ui/react'
 
-  const headingStyles = defineStyle({
-    textAlign: 'center', // Center the text
-    marginTop: '-1em', // Indent the text by 5 lines
-    color: '#90e0ef',
-    fontFamily: 'Bubblegum Sans, sans-serif', // Change the font to Arial
-  });
+const Home = () => {
+  const navigate = useNavigate();
+
+  const navigateToRoute = () => {
+    navigate('/drawing')
+  }
 
   return (
     <div className="animated-background">
@@ -32,7 +31,7 @@ const Home = () => {
       <Center>
         <Image
           borderRadius='full'
-          boxSize='400px'
+          boxSize='520px'
           src= {logo}
           alt='Logo'
 
@@ -40,11 +39,9 @@ const Home = () => {
       </Center>
       <Stack direction='row' spacing={4}> </Stack>
 
-      <Stack spacing={1} align = "center">
-        <Heading as='h1' size='2xl' noOfLines={20} style={headingStyles}>
-          DoodleDash
-        </Heading>
-      </Stack>
+      <Flex justifyContent="center" alignItems="center" height="0vh">
+        <Button colorScheme='blue' onClick={navigateToRoute} size="lg" h = "55px" w="210px" top="-100px">PLAY</Button>
+      </Flex>
     </div>
   );
 };

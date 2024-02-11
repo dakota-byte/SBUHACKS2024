@@ -11,7 +11,7 @@ const PostHeader = (prop) => {
       </ProfileBox>
 
       {/* Caption/Title */}
-      <Text ml={4} fontWeight="bold">{prop.caption}</Text>
+      <Text ml={4} fontWeight="bold" noOfLines= {1}>{prop.caption} </Text>
     </Flex>
   );
 };
