@@ -18,8 +18,9 @@ const Home = () => {
     navigate('/drawing')
   }
 
+  
   return (
-    <div className="animated-background">
+    <div className="animated-background" style={{overflow: 'hidden'}}>
 
       <Center>
         <Image
