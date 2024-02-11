@@ -1,7 +1,7 @@
 //this will be for the drawing component
 
 import {IconButton, Box, Input, Flex} from "@chakra-ui/react";
-import Canvas from "./Canvas/Canvas";
+import Canvas from "./Canvas";
 import { CiEraser } from "react-icons/ci";
 
 const DrawBox = () => {
