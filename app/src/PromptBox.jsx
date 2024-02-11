@@ -136,7 +136,7 @@ function PromptBox(props)
                             </TabPanel>
 
                         <TabPanel>
-            \
+            
                         
                             <PostGallery/>
                             
