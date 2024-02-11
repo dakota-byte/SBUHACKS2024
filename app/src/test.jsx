@@ -10,6 +10,8 @@ import Post from "./Post.jsx"
 
 import PromptBox from "./PromptBox.jsx";
 
+import DrawBox from "./DrawBox.jsx";
+
 const KyleTest = () => {
   const placeHolderName1 = "John Doe";
   const placeHolderName2 = "Kyle Robert Batman Bautista";
@@ -28,6 +30,8 @@ const KyleTest = () => {
     // </div>
 
     <div>
+        <DrawBox/>
+
         <PromptBox
             prompt = {"How I feel when I have 1 hour left in SBU Hacks"}
         >
