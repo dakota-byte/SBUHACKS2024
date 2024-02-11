@@ -5,7 +5,7 @@ import { Tabs, TabList, Tab } from '@chakra-ui/react'
 function Navigation(){
 
     return(
-        <Tabs>
+        <Tabs align = 'center'>
             <TabList>
                 <Tab><a href = "/">Home</a></Tab>
                 <Tab><a href = "/about"> About</a></Tab>

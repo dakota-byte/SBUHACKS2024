@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Text } from '@chakra-ui/react'
+import { Text , Tab, Tabs, TabList } from '@chakra-ui/react'
 
 
 import {Box} from "@chakra-ui/react";
@@ -15,9 +15,9 @@ function PromptBox(props)
                 p = {2}
                 boxShadow = "md"
                 borderRadius = "md"
-                maxWidth="600px" // Limit width to 400px
+                maxWidth="1000px" // Limit width to 400px
                 mx = "auto"
-                marginTop={2}
+                marginTop={0}
                 marginBottom={2}
                 bg="white"
             > 
@@ -41,10 +41,15 @@ function PromptBox(props)
                     >
                         {props.prompt}
                     </Text>
+                    <Tabs defaultIndex={1} isFitted variant = 'enclosed' align = 'center' size = 'lg' colorScheme = 'cyan' fontFamily='monospace'>
+                        <TabList>
+                            <Tab _selected={{ color: 'white', bg: 'blue.500' }}>DRAW</Tab>
+                            <Tab _selected={{ color: 'white', bg: 'blue.500' }}>VIEW</Tab>
+                        </TabList>
+                    </Tabs>
                 </Box>
 
                 <Box p = {1}> {/*adding on the right of the text*/}</Box>
-                
                 
             </Box>
             

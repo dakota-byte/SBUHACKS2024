@@ -1,22 +1,15 @@
 // Home.js
 import React from 'react';
-import { Stack, Heading} from '@chakra-ui/react'
 
 import Navigation from "./Navigation.jsx"
 
-import { useHistory, useNavigate } from "react-router-dom";
-
-import { withRouter } from 'react-router';
-
-import { defineStyle } from '@chakra-ui/react'
+import {useNavigate } from "react-router-dom";
 
 import './animation.css';
 
-import {Center, Image} from '@chakra-ui/react'
+import {Stack, Center, Image, Button, Flex} from '@chakra-ui/react'
 
 import logo from './assets/logo.png';
-
-import { Button, ButtonGroup, Flex, Switch, Route, Link } from '@chakra-ui/react'
 
 const Home = () => {
   const navigate = useNavigate();
