@@ -2,13 +2,6 @@
 
 import {Box, Input, Flex} from "@chakra-ui/react";
 import Canvas from "./Canvas/Canvas";
-//darw
-const draw = (context , count) =>{
-    context.clearRect(0,0, context.canvas.width, context.canvas.height)
-    context.fillStyle = 'grey'
-    const delta = count % 800
-    context.fillRect(10 + delta, 10, 100, 100)
-}
 
 const DrawBox = () => {
     return (
@@ -25,13 +18,14 @@ const DrawBox = () => {
                     
                 </Box>
             </Flex>
+            <Box boxShadow ="lg">
+                <Canvas
+                    width = "570px"
+                    height = "300px"
+                >
+                </Canvas>
+            </Box>
             
-            <Canvas
-                draw={draw}
-                width = "570px"
-                height = "300px"
-            >
-            </Canvas>
 
             <h1></h1>
     

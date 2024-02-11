@@ -17,6 +17,8 @@ const Canvas = () => {
         event.clientY <= rect.bottom
       ) {
         setIsDrawing(true);
+        context.beginPath(); // Start a new path
+        context.moveTo(event.clientX - rect.left, event.clientY - rect.top);
       }
     };
 
@@ -45,7 +47,7 @@ const Canvas = () => {
     };
   }, [isDrawing]);
 
-  return <canvas ref={canvasRef} width={800} height={600} />;
+  return <canvas ref={canvasRef} width={570} height={300} />;
 };
 
 export default Canvas;
