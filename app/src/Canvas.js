@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
+import axios from "axios";
+
 const Canvas = () => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -48,19 +50,33 @@ const Canvas = () => {
     };
   }, [isDrawing]);
 
-  const handleSaveImageToServer = () => {
+  const handleSaveImageToServer = async () => {
     const canvas = canvasRef.current;
     const dataURL = canvas.toDataURL("image/png");
-
-    // Send the image data to the server
-    axios.post("/api/save-image", { imageData: dataURL })
-      .then(response => {
-        console.log("Image saved to server:", response.data);
-      })
-      .catch(error => {
-        console.error("Error saving image to server:", error);
+  
+    const base64Data = dataURL.split(',')[1];
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/save-image", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ imageData: base64Data })
       });
+  
+      if (!response.ok) {
+        throw new Error('Failed to save image');
+      }
+  
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
+  
+  
 
   return (
     <div>

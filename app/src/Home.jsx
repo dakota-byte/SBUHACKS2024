@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="animated-background">
-      <Navigation/>
+
       <Center>
         <Image
           borderRadius='full'
