@@ -31,6 +31,7 @@ const DrawBox = () => {
                     aria-label='Call Sage'
                     fontSize='20px'
                     icon={<CiEraser />}
+                    style={{ borderRadius: '50%' , right: '-255px', top: '-10px'}}
                 />
             </Box>
             
