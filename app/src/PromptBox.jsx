@@ -17,6 +17,8 @@ import greenAstronaut from './assets/astronautpfps/greenastronaut.png';
 import redAstronaut from './assets/astronautpfps/redastronaut.png';
 import yellowAstronaut from './assets/astronautpfps/yellowastronaut.png';
 
+import PostGallery from "./PostGallery.jsx";
+
 
 function PromptBox(props)
 {
@@ -136,13 +138,8 @@ function PromptBox(props)
                         <TabPanel>
             \
                         
-                            <Post
-                            name = {placeHolderName2}
-                            link = {placeHolderLink2}
-                            caption = {placeHolderCaption2}
-                            >
+                            <PostGallery/>
                             
-                            </Post>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>

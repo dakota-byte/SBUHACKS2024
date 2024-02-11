@@ -20,7 +20,7 @@ const PostImage = (prop) => {
       boxShadow="sm"
     >
       <img
-        src={prop.src}
+        src={prop.img}
         alt="Post Image"
         style={{
           width: "100%",

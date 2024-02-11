@@ -6,6 +6,29 @@ const port = 3000;
 const app = express();
 app.use(cors());
 
+app.post("/api/save-image", (req, res) => {
+  const imageData = req.body.imageData;
+
+  // Generate a unique file name (e.g., using a timestamp)
+  const timestamp = Date.now();
+  const fileName = `image_${timestamp}.png`;
+
+  // Define the directory where images will be saved
+  const saveDir = path.join(__dirname, "doodles");
+
+  // Write the image data to a file
+  const filePath = path.join(saveDir, fileName);
+  fs.writeFile(filePath, imageData, "base64", (err) => {
+    if (err) {
+      console.error("Error saving image:", err);
+      res.status(500).send("Error saving image");
+    } else {
+      console.log("Image saved successfully:", fileName);
+      res.status(200).send("Image saved successfully");
+    }
+  });
+});
+
 // BELOW IS BELOW IS BELOW XD
 
 // Route 1: Home route
