@@ -78,7 +78,7 @@ function PromptBox(props)
 
                         <TabPanels>
                             <TabPanel>
-                            <Text fontWeight="bold" fontSize="sm">Choose Profile Icon:</Text>
+                            {/* <Text fontWeight="bold" fontSize="sm">Choose Profile Icon:</Text>
                                 <Flex style={{width: '185px', flexDirection: 'row'}}>
                                     <IconButton
                                         colorScheme='blue'
@@ -108,7 +108,7 @@ function PromptBox(props)
                                         style={{ borderRadius: '50%' , marginRight: '8px'}}
                                     />
 
-                                </Flex>
+                                </Flex> */}
 
                                 <Textarea maxLength={20} rows={1} size='lg' placeholder='Enter a desired username (20 characters max)...' style={{width: '550px', resize: 'none', paddingTop: '5px', marginTop: '10px'}}/>
                                 
