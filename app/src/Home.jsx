@@ -21,7 +21,7 @@ const Home = () => {
 
   const headingStyles = defineStyle({
     textAlign: 'center', // Center the text
-    marginTop: '-1em', // Indent the text by 5 lines
+    marginTop: '0em', // Indent the text by 5 lines
     color: '#90e0ef',
     fontFamily: 'Bubblegum Sans, sans-serif', // Change the font to Arial
   });
@@ -32,19 +32,13 @@ const Home = () => {
       <Center>
         <Image
           borderRadius='full'
-          boxSize='400px'
+          boxSize='520px'
           src= {logo}
           alt='Logo'
 
         />
       </Center>
       <Stack direction='row' spacing={4}> </Stack>
-
-      <Stack spacing={1} align = "center">
-        <Heading as='h1' size='2xl' noOfLines={20} style={headingStyles}>
-          DoodleDash
-        </Heading>
-      </Stack>
     </div>
   );
 };

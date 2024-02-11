@@ -1,5 +1,5 @@
 @keyframes backgroundAnimation {
-    0% { background-color: #25cfaa; }
+    0% { background-color: #1ba577; }
     50% { background-color: #106b6e; }
     100% { background-color: #10a882; }
   }
@@ -7,5 +7,5 @@
   .animated-background {
     width: 100%;
     height: 250vh;
-    animation: backgroundAnimation 6s infinite alternate; /* Apply the animation */
+    animation: backgroundAnimation 5s infinite alternate; /* Apply the animation */
   }
