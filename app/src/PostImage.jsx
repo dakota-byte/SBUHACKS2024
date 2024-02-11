@@ -5,6 +5,7 @@ import {Box} from "@chakra-ui/react";
 
 //use for placeholder
 import placeHolderImg from "./assets/whitebox.png"
+import placeHolderDrawing from "./assets/lilGuy.png"
 
 
 const PostImage = () => {
@@ -16,9 +17,10 @@ const PostImage = () => {
       borderRadius="md"
       position="relative"
       overflow="hidden"
+      boxShadow="sm"
     >
       <img
-        src={placeHolderImg}
+        src={placeHolderDrawing}
         alt="Post Image"
         style={{
           width: "100%",
