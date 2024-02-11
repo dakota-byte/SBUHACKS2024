@@ -8,6 +8,8 @@ import PostHeader from "./PostHeader.jsx";
 
 import Post from "./Post.jsx"
 
+import PromptBox from "./PromptBox.jsx";
+
 const KyleTest = () => {
   const placeHolderName1 = "John Doe";
   const placeHolderName2 = "Kyle Robert Batman Bautista";
@@ -26,14 +28,12 @@ const KyleTest = () => {
     // </div>
 
     <div>
-        <ProfileBox name = {placeHolderName1} link = {placeHolderLink1}></ProfileBox>
-    //   <ProfileBox name = {placeHolderName2} link = {'https://bit.ly/broken-link'}></ProfileBox>
-    //   <ProfileBox name = {placeHolderName3} link = {placeHolderLink2}></ProfileBox>
+        <PromptBox
+            prompt = {"How I feel when I have 1 hour left in SBU Hacks"}
+        >
 
-        <PostHeader name = {placeHolderName1} link = {placeHolderLink1} caption = {placeHolderCaption1}>
-
-        </PostHeader>
-
+        </PromptBox>
+        
         <Post
             name = {placeHolderName1}
             link = {placeHolderLink1}
@@ -49,6 +49,14 @@ const KyleTest = () => {
         >
             
         </Post>
+
+        <ProfileBox name = {placeHolderName1} link = {placeHolderLink1}></ProfileBox>
+    //   <ProfileBox name = {placeHolderName2} link = {'https://bit.ly/broken-link'}></ProfileBox>
+    //   <ProfileBox name = {placeHolderName3} link = {placeHolderLink2}></ProfileBox>
+
+        <PostHeader name = {placeHolderName1} link = {placeHolderLink1} caption = {placeHolderCaption1}>
+
+        </PostHeader>
 
     </div>
   );
