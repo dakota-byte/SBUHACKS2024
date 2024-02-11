@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Image, Text , Tab, Tabs, TabList, TabPanels, TabPanel, IconButton, Box, Textarea, Flex } from '@chakra-ui/react'
+import { Button, Image, Text , Tab, Tabs, TabList, TabPanels, TabPanel, IconButton, Box, Textarea, Flex, Stack } from '@chakra-ui/react'
 
 import ProfileBox from "./ProfileBox.jsx"
 
@@ -110,17 +110,51 @@ function PromptBox(props)
 
                                 </Flex> */}
 
-                                <Textarea maxLength={20} rows={1} size='lg' placeholder='Enter a desired username (20 characters max)...' style={{width: '550px', resize: 'none', paddingTop: '5px', marginTop: '10px'}}/>
-                                
-                                <DrawBox></DrawBox>
+                                <Box maxWidth="600px" mx="auto" marginTop={2} marginBottom={2} bg="white" flexDirection="column">
+                                    <Textarea maxLength={20} rows={1} size='lg' placeholder='Enter a desired username (20 characters max)...' style={{width: '550px', resize: 'none', paddingTop: '5px', marginTop: '10px'}}/>
 
-                                <Flex justifyContent="center" alignItems="center" height="15vh">
-                                    <Button colorScheme='green' onClick={navigateToRoute} size="md" h = "50px" w="210px" top="30px">SUBMIT</Button>
-                                </Flex>
+                                    <DrawBox></DrawBox>
+                                  
+                                    <Stack direction={{ base: 'column', md: 'row' }} spacing={4} align="center">
+                                        <Box margin="1px">
+                                            <Button
+                                                colorScheme="green"
+                                                onClick={navigateToRoute}
+                                                maxWidth="210"
+                                                maxHeight="50px"
+                                                width="100%"
+                                            >
+                                                SUBMIT
+                                            </Button>
+                                    </Box>
+                                    
+                                        <Box margin="1px">
+                                            <Button
+                                                colorScheme="red"
+                                                onClick={navigateToRoute}
+                                                maxWidth="150"
+                                                maxHeight="30px"
+                                                width="100%"
+                                            >
+                                                CANCEL
+                                            </Button>
+                                        </Box>
+                                    </Stack>
+
+                                    
+                                </Box>
+
+                                
+                                
+                                {/* 
+
+                                <Box justifyContent="center" alignItems="center" height="15vh">
+                                    
+                                </Box>
 
                                 <Flex justifyContent="center" alignItems="center" height="12vh">
-                                    <Button colorScheme='red' onClick={navigateToRoute} size="md" h = "30px" w="150px" top="-30px">CANCEL</Button>
-                                </Flex>
+                                    
+                                </Flex> */}
                             </TabPanel>
 
                         <TabPanel>
