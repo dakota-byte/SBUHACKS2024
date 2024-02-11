@@ -12,7 +12,7 @@ function Navigation(){
                 <Tab><a href = "/drawing"> Drawing</a></Tab>
                 <Tab><a href = "/feed"> Feed</a></Tab>
                 <Tab><a href = "/profile"> Profile</a></Tab>
-                <Tab><a href = "https://www.youtube.com/watch?v=CgkZ7MvWUAA"> Test Link</a></Tab>
+                <Tab><a href = "/kyletest"> Test Link</a></Tab>
                 <Tab><a href = "/login">Login</a></Tab>
             </TabList>
         </Tabs>
