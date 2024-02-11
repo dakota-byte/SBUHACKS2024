@@ -69,6 +69,12 @@ def upload():
       "id": random.randint(0, 99999999)
     }
 
+    image_data = urllib.parse.unquote(image_data)
+    image_data = base64.b64decode(image_data)
+
+    with open(f'./images/{data["id"]}.png', 'wb') as f:
+        f.write(image_data)
+
     # Insert the data into MongoDB
     result = UserData.insert_one(data)
 
@@ -77,18 +83,6 @@ def upload():
         return jsonify({'message': 'Entry added successfully', 'id': str(result.inserted_id)}), 201
     else:
         return jsonify({'message': 'Failed to add entry'}), 500
-    
-@app.route('/api/image/<int:image_id>', methods=['GET'])
-def get_user(image_id):
-  try: 
-      result = UserData.find_one({"id":image_id})
-      if not result:
-         return {"error": "not found"}
-      result["_id"] = "redacted"
-      print(result)
-      return jsonify(result)
-  except pymongo.errors.OperationFailure:
-      print("An authentication error was received. Are you sure your database user is authorized to perform write operations?")
 
 if __name__ == '__main__':
   app.run(debug=True, port=5000)
